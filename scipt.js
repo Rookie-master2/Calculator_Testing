@@ -9,3 +9,8 @@ function applyPercentage() {
     // Hello 
   }
  
+function handleExponent() { //Phal
+    expression += "**";
+    updateDisplay();
+    }
+   
