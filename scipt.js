@@ -24,3 +24,7 @@ function handleExponent() { //Phal
     updateDisplay();
     }
    
+function backspace() {  //Backspace Last Character
+ expression = expression.slice(0, -1);
+ updateDisplay();
+}
