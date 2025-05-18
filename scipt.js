@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function applyPercentage() {
     const match = expression.match(/(\d+\.?\d*)$/);
     if (match) {
@@ -24,3 +25,15 @@ function handleExponent() { //Phal
     updateDisplay();
     }
    
+=======
+// === Module: Append Button Value to Expression ++  ===  rida2 (feature)
+function appendToExpression(value) {
+ expression += value;
+ updateDisplay();
+}
+function updateDisplay() {
+    expressionEl.textContent = expression;
+    resultEl.textContent = expression || "0";
+   }
+   
+>>>>>>> feature/issue#6_Append_Button
