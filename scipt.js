@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function evaluateExpression() {
     try {
       const result = eval(expression);
@@ -20,6 +21,12 @@ function evaluateExpression() {
     }
 }
  
+=======
+function clearExpression() {
+ expression = "";
+ updateDisplay();
+}
+>>>>>>> feature/issue#9_Clear_All
 function applyPercentage() {
     const match = expression.match(/(\d+\.?\d*)$/);
     if (match) {
