@@ -6,5 +6,6 @@ function applyPercentage() {
       expression = expression.replace(/(\d+\.?\d*)$/, percentValue.toString());
       updateDisplay();
     }
+    // Hello 
   }
  
