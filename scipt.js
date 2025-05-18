@@ -110,6 +110,7 @@ function updateDisplay() {
 
 
 function handleSquareRoot() {
+<<<<<<< HEAD
  const match = expression.match(/(\d+\.?\d*)$/);
  if (match) {
    const number = parseFloat(match[1]);
@@ -129,5 +130,22 @@ function handleExponent() {
 
 function clearExpression() {
  expression = "";
+=======
+    const match = expression.match(/(\d+\.?\d*)$/);
+    if (match) {
+      const number = parseFloat(match[1]);
+      const sqrtValue = Math.sqrt(number);
+      expression = expression.replace(/(\d+\.?\d*)$/, sqrtValue.toString());
+      updateDisplay();
+    }
+   }
+function handleExponent() { //Phal
+    expression += "**";
+    updateDisplay();
+    }
+   
+function backspace() {  //Backspace Last Character
+ expression = expression.slice(0, -1);
+>>>>>>> bugfix/#18
  updateDisplay();
 }
