@@ -19,3 +19,8 @@ function handleSquareRoot() {
       updateDisplay();
     }
    }
+function handleExponent() { //Phal
+    expression += "**";
+    updateDisplay();
+    }
+   
