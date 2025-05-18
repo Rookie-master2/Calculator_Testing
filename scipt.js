@@ -1,0 +1,5 @@
+function handleExponent() {
+    expression += "**";
+    updateDisplay();
+   }
+   
