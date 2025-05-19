@@ -67,6 +67,7 @@ function toggleNegative() {
    }
 }
 
+<<<<<<< HEAD
 
 function applyPercentage() {
    const match = expression.match(/(\d+\.?\d*)$/);
@@ -106,19 +107,44 @@ function clearExpression() {
   expression = "";
   
 
+=======
+>>>>>>> release/1.0
 function applyPercentage() {
-    const match = expression.match(/(\d+\.?\d*)$/);
-    if (match) {
-      const number = parseFloat(match[1]);
-      const percentValue = number / 100;
-      expression = expression.replace(/(\d+\.?\d*)$/, percentValue.toString());
-      updateDisplay();
-    }
-    // Hello 
-  }
- 
+   const match = expression.match(/(\d+\.?\d*)$/);
+   if (match) {
+     const number = parseFloat(match[1]);
+     const percentValue = number / 100;
+     expression = expression.replace(/(\d+\.?\d*)$/, percentValue.toString());
+     updateDisplay();
+   }
+ }
+
+
+function appendToExpression(value) {
+ expression += value;
+ updateDisplay();
+}
+
+
+function updateDisplay() {
+ expressionEl.textContent = expression;
+ resultEl.textContent = expression || "0";
+}
+
 
 function handleSquareRoot() {
+ const match = expression.match(/(\d+\.?\d*)$/);
+ if (match) {
+   const number = parseFloat(match[1]);
+   const sqrtValue = Math.sqrt(number);
+   expression = expression.replace(/(\d+\.?\d*)$/, sqrtValue.toString());
+   updateDisplay();
+ }
+}
+
+
+function clearExpression() {
+  expression = "";
     const match = expression.match(/(\d+\.?\d*)$/);
     if (match) {
       const number = parseFloat(match[1]);
@@ -139,3 +165,4 @@ function backspace() {
   updateDisplay();
 }
 }
+
