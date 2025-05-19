@@ -67,7 +67,6 @@ function toggleNegative() {
    }
 }
 
-
 function applyPercentage() {
    const match = expression.match(/(\d+\.?\d*)$/);
    if (match) {
