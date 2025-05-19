@@ -45,17 +45,16 @@ buttons.forEach(button => {
 
 
 function evaluateExpression() {
-   try {
-     const result = eval(expression);
-     resultEl.textContent = result;
-     expressionEl.textContent = expression;
-     expression = result.toString();
-   }
-   catch {
-  
-   }
+  try {
+    const result = eval(expression);
+    resultEl.textContent = result;
+    expressionEl.textContent = expression;
+    expression = result.toString();
+  }
+  catch {
+    resultEl.textContent = "Error"; 
+  }
 }
-
 
 function toggleNegative() {
    const match = expression.match(/(\-?\d+\.?\d*)$/);
@@ -77,10 +76,20 @@ function applyPercentage() {
    }
  }
 
-
-function appendToExpression(value) {
- expression += value;
- updateDisplay();
+ function appendToExpression(value) {  
+  const lastNumberMatch = expression.match(/(\d+\.?\d*)$/);
+  if (value === "0" && lastNumberMatch && lastNumberMatch[1] === "0") {
+    return;
+  }
+  if (value === "0" && /[\+\-\*\/\(\)]0$/.test(expression)) {
+    return;
+  }
+  if (/^0$/.test(expression) && value !== ".") {
+    expression = value;
+  } else {
+    expression += value;
+  }
+  updateDisplay();
 }
 
 
@@ -122,5 +131,3 @@ function backspace() {
   expression = expression.slice(0, -1);
   updateDisplay();
 }
-
-
