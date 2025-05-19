@@ -43,7 +43,6 @@ buttons.forEach(button => {
  });
 });
 
-
 function evaluateExpression() {
   try {
     const result = eval(expression);
@@ -52,7 +51,7 @@ function evaluateExpression() {
     expression = result.toString();
   }
   catch {
-    resultEl.textContent = "Error"; 
+    resultEl.textContent = "Error";
   }
 }
 
@@ -76,7 +75,7 @@ function applyPercentage() {
    }
  }
 
- function appendToExpression(value) {  
+function appendToExpression(value) {
   const lastNumberMatch = expression.match(/(\d+\.?\d*)$/);
   if (value === "0" && lastNumberMatch && lastNumberMatch[1] === "0") {
     return;

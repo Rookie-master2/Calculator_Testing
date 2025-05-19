@@ -51,4 +51,30 @@ body{
      font-size: 18px;
      background-color: #455a64;
      color: white;
-    }    
+     border: none;
+     outline: none;
+     cursor: pointer;
+     transition: background-color 0.2s;
+    }
+    
+    button:hover {
+        background-color: #546e7a;
+       }
+       
+       
+       button.operator {
+        color: #fbc02d;
+       }
+       
+       
+       button.clear {
+        color: #e53935;
+       }
+       
+       
+       button.equal {
+        background-color: #1de9b6;
+        color: #263238;
+        font-weight: bold;
+       }
+       
