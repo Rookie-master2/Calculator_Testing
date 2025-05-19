@@ -45,17 +45,16 @@ buttons.forEach(button => {
 
 
 function evaluateExpression() {
-   try {
-     const result = eval(expression);
-     resultEl.textContent = result;
-     expressionEl.textContent = expression;
-     expression = result.toString();
-   }
-   catch {
-  
-   }
+  try {
+    const result = eval(expression);
+    resultEl.textContent = result;
+    expressionEl.textContent = expression;
+    expression = result.toString();
+  }
+  catch {
+    resultEl.textContent = "Error"; 
+  }
 }
-
 
 function toggleNegative() {
    const match = expression.match(/(\-?\d+\.?\d*)$/);
