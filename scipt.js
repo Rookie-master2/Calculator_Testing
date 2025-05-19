@@ -7,42 +7,34 @@ buttons.forEach(button => {
  button.addEventListener("click", () => {
    const value = button.textContent;
 
-
    switch (value) {
      case "C":
        clearExpression();
        break;
 
-
      case "⌫":
        backspace();
        break;
-
 
      case "=":
        evaluateExpression();
        break;
 
-
      case "%":
        applyPercentage();
        break;
-
 
      case "≠":
        toggleNegative();
        break;
 
-
      case "^":
        handleExponent();
        break;
 
-
      case "√":
        handleSquareRoot();
        break;
-
 
      default:
        appendToExpression(value);
@@ -50,7 +42,6 @@ buttons.forEach(button => {
    }
  });
 });
-
 
 
 function evaluateExpression() {
@@ -66,7 +57,6 @@ function evaluateExpression() {
 }
 
 
-
 function toggleNegative() {
    const match = expression.match(/(\-?\d+\.?\d*)$/);
    if (match) {
@@ -76,9 +66,6 @@ function toggleNegative() {
      updateDisplay();
    }
 }
-
-
-
 
 
 function applyPercentage() {
@@ -92,14 +79,10 @@ function applyPercentage() {
  }
 
 
-
-
-
 function appendToExpression(value) {
  expression += value;
  updateDisplay();
 }
-
 
 
 function updateDisplay() {
@@ -108,9 +91,7 @@ function updateDisplay() {
 }
 
 
-
 function handleSquareRoot() {
-<<<<<<< HEAD
  const match = expression.match(/(\d+\.?\d*)$/);
  if (match) {
    const number = parseFloat(match[1]);
@@ -121,16 +102,8 @@ function handleSquareRoot() {
 }
 
 
-function handleExponent() {
- expression += "**";
- updateDisplay();
-}
-
-
-
 function clearExpression() {
- expression = "";
-=======
+  expression = "";
     const match = expression.match(/(\d+\.?\d*)$/);
     if (match) {
       const number = parseFloat(match[1]);
@@ -138,14 +111,16 @@ function clearExpression() {
       expression = expression.replace(/(\d+\.?\d*)$/, sqrtValue.toString());
       updateDisplay();
     }
-   }
-function handleExponent() { //Phal
-    expression += "**";
-    updateDisplay();
-    }
+}
+
+
+function handleExponent() { 
+  expression += "**";
+  updateDisplay();
+}
    
-function backspace() {  //Backspace Last Character
- expression = expression.slice(0, -1);
->>>>>>> bugfix/#18
- updateDisplay();
+
+function backspace() { 
+  expression = expression.slice(0, -1);
+  updateDisplay();
 }
