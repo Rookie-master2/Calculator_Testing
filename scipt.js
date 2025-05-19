@@ -104,6 +104,21 @@ function handleSquareRoot() {
 
 function clearExpression() {
   expression = "";
+  
+
+function applyPercentage() {
+    const match = expression.match(/(\d+\.?\d*)$/);
+    if (match) {
+      const number = parseFloat(match[1]);
+      const percentValue = number / 100;
+      expression = expression.replace(/(\d+\.?\d*)$/, percentValue.toString());
+      updateDisplay();
+    }
+    // Hello 
+  }
+ 
+
+function handleSquareRoot() {
     const match = expression.match(/(\d+\.?\d*)$/);
     if (match) {
       const number = parseFloat(match[1]);
@@ -122,4 +137,5 @@ function handleExponent() {
 function backspace() { 
   expression = expression.slice(0, -1);
   updateDisplay();
+}
 }
