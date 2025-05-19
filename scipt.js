@@ -56,7 +56,6 @@ function evaluateExpression() {
   }
 }
 
-
 function toggleNegative() {
    const match = expression.match(/(\-?\d+\.?\d*)$/);
    if (match) {
