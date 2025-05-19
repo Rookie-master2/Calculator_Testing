@@ -78,9 +78,20 @@ function applyPercentage() {
  }
 
 
-function appendToExpression(value) {
- expression += value;
- updateDisplay();
+ function appendToExpression(value) {  
+  const lastNumberMatch = expression.match(/(\d+\.?\d*)$/);
+  if (value === "0" && lastNumberMatch && lastNumberMatch[1] === "0") {
+    return;
+  }
+  if (value === "0" && /[\+\-\*\/\(\)]0$/.test(expression)) {
+    return;
+  }
+  if (/^0$/.test(expression) && value !== ".") {
+    expression = value;
+  } else {
+    expression += value;
+  }
+  updateDisplay();
 }
 
 
